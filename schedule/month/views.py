@@ -17,6 +17,12 @@ month_schedule = {
     'april': 'Learning Git',
 }
 
+def index(request):
+    month = list(month_schedule.keys())
+
+    return render(request,'month_details/index.html',{
+            'month':month
+    })
 
 def monthly_details_by_number(request, month):
 
@@ -42,7 +48,16 @@ def monthly_details_by_number(request, month):
 def monthly_details(request, month):
     try:
         month_text = month_schedule[month]
-        return HttpResponse(month_text)
+        response_data = render(request,'month_details/month.html', 
+        {
+            'text': month_text
+        }
+        )
+
+        
+        return HttpResponse(response_data)
     except:
         return HttpResponseNotFound('This is not mentioned')
+    
+
 
