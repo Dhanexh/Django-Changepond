@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Forms{% endblock %}
+
+{% block contents %}
+    {% include "include/header.html" %}
+    <style>
+        /* styles.css */
+
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 50px auto; /* Center the form on the page */
+}
+
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-container input[type="text"],
+.form-container input[type="textarea"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding doesn't add to width */
+}
+
+.form-container button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-container button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+<div class="form-container">
+    <h2>Form</h2>
+    <form action="/submit-post" method="post">
+
+        <label for="author_name">Author Name:</label>
+        <input type="text" id="author_name" name="author_name" required><br>
+
+        <label for="postname">Post Name:</label>
+        <input type="text" id="postname" name="postname" required><br>
+
+        <label for="description">Description:</label>
+        <input type="textarea" id="description" name="description" required><br>
+
+        <label for="image_url">Image URL:</label>
+        <input type="text" id="image_url" name="image_url" required><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% include "include/footer.html" %}
+{% endblock contents %}

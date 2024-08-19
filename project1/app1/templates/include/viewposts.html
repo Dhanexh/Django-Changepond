@@ -1,0 +1,21 @@
+<div class="post_container">
+    {% if show_all %}
+        {% for post in postdata %}
+            <div class="post_card">
+                <img src="{{ post.image }}" width=400 height=400 alt="{{ post.post_title }}" class="post_image">
+                <h2 class="post_title">{{ post.post_title }}</h2>
+                <h3 class="post_description">{{ post.post_description }}</h3>
+                <a href="{% url 'post_detail' post.id %}" class="post_card_link">more info</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        {% for post in postdata|slice:"1:4" %}
+            <div class="post_card">
+                <img src="{{ post.image }}" width=400 height=400 alt="{{ post.post_title }}" class="post_image">
+                <h2 class="post_title">{{ post.post_title }}</h2>
+                <h3 class="post_description">{{ post.post_description }}</h3>
+                <a href="{% url 'post_detail' post.id %}" class="post_card_link">more info</a>
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>

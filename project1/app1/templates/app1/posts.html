@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Posts{% endblock  %}
+{% block contents %}
+
+Welcome to the posts page of the Django Task1
+
+{% comment %} <link rel="stylesheet" href="{% static "app1.css" %}"> {% endcomment %}
+<link rel="stylesheet" href="{% static "posts.css" %}">
+
+{% include "include/viewposts.html" %}
+{% endblock contents %}

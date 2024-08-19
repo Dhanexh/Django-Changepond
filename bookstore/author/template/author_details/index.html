@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>{{auth.full_name}}</title>
 </head>
 <body>
-    <LI>
-        {% for auth in authors %}
-        {{auth}}
-        {% endfor %}
-    </LI>
+        <h4> Full Name : {{auth.first_name}} {{auth.last_name}} </h4>
+        <h4> Age : {{auth.age}} </h4>
+        <h4> Cite : {{auth.city}}</h4>
+        <h4> Rating : {{auth.rating}}</h4>
+    
 </body>
 </html>

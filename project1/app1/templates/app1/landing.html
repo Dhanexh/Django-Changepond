@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}HomePage{% endblock %}
+{% block contents %}
+
+<link rel="stylesheet" href="{% static "posts.css" %}">
+<center>
+    <h1>Welcome to Homepage</h1>
+</center>
+    
+    {% include "include/viewposts.html" %}
+
+{% endblock contents %}

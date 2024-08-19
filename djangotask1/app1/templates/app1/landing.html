@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}HomePage{% endblock %}
+
+{% block contents %}
+    {% include "include/header.html" %}
+    <style>
+        .post_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    
+        .post_card {
+            width: 30%;
+            margin: 10px;
+            padding: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+    
+        .post_image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    
+        .post_title {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+    
+        .post_description {
+            font-size: 1rem;
+            color: #555;
+        }
+    </style>
+    <h1>Welcome to the home page of the Django Task1</h1>
+
+    <div class="post_container">
+
+        {% for post in postdata|slice:":3" %}
+            <div class="post_card">
+                <img src="{{ post.image }}" width=400 height=400 alt="{{ post.post_title }}" class="post_image">
+                <h2 class="post_title">{{ post.post_title }}</h2>
+                <h3 class="post_description">{{ post.post_description }}</h3>
+                <a href="{% url 'post_detail' post.id %}" class="post_card_link">more info</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% include "include/footer.html" %}
+{% endblock contents %}
