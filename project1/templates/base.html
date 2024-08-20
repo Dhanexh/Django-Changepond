@@ -12,26 +12,30 @@
 </head>
 <body>
     <div class="container-fluid ">
-        <header class="d-flex justify-content-center py-3 border-bottom">
-          <ul class="nav nav-pills">
-            <li class="nav-item h1"><a href="/" class="nav-link "><b>Home</b></a></li>
-            <li class="nav-item h1"><a href="aboutus" class="nav-link "><b>About us</b></a></li>
-            <li class="nav-item h1"><a href="posts" class="nav-link "><b>Posts</b></a></li>
-            <li class="nav-item h1"><a href="form" class="nav-link "><b>Form</b></a></li>
-          </ul>
-        </header>
-      </div>
+      <header class="d-flex justify-content-center py-3 border-bottom">
+        <ul class="nav nav-pills">
+          <li class="nav-item h2"><a href="/" class="nav-link "><b>Home</b></a></li>
+          <li class="nav-item h2"><a href="aboutus" class="nav-link "><b>About us</b></a></li>
+          <li class="nav-item h2"><a href="posts" class="nav-link "><b>Posts</b></a></li>
+          <li class="nav-item h2"><a href="form" class="nav-link "><b>Form</b></a></li>
+        </ul>
+      </header>
+    </div>
 
     {% block contents %}{% endblock contents %}
     
     <footer>
+      <br>
         <div class="">
-            <h2>Follow Us</h2>
-            <a href="#"><img src="icons/facebook.png" alt="Facebook"></a>
-            <a href="#"><img src="icons/twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="icons/instagram.png" alt="Instagram"></a>
-            <a href="#"><img src="icons/linkedin.png" alt="LinkedIn"></a>
-        </div>
+          <center>
+            <h4>Follow Us</h4>
+            <a href="#"><img src="https://cdn.pixabay.com/photo/2017/06/22/06/22/facebook-2429746_1280.png" alt="Facebook" height="30px"></a>
+            <a href="#"><img src="https://cdn.pixabay.com/photo/2017/06/22/14/23/twitter-2430933_1280.png" alt="Twitter" height="30px"></a>
+            <a href="#"><img src="https://cdn.pixabay.com/photo/2022/04/01/05/40/app-7104075_1280.png" alt="Instagram" height="30px"></a>
+            <a href="#"><img src="https://cdn.pixabay.com/photo/2017/06/27/04/57/linkedin-2446228_1280.png" alt="LinkedIn" height="30px"></a>
+          </center>
+          <br><br><br>
+        </div>           
     </footer>
 </body>
 </html>

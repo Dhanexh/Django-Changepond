@@ -42,11 +42,11 @@ h3.post_description {
 }
 
 </style>
-<img src="{{ post.image }}" width=400 height=400 alt="{{ post.post_title }}" class="post_image">
-<h2 class="post_title">{{ post.post_title }}</h2>
-<h3 class="post_description">{{ post.post_description }}</h3>
-<h3 class="post_description">{{ post.id }}</h3>
-<h3 class="post_description">{{ post.posted_at }}</h3>
-<h3 class="post_description">{{ post.posted_by }}</h3>
+<img src="{{ post.image }}" width=400 height=400 alt="{{ post.title }}" class="post_image">
+<h2 class="post_title">{{ post.title }}</h2>
+<h3 class="post_description"><strong>Description:</strong> {{ post.description }}</h3>
+<!-- <h3 class="post_description">Post Id: {{ post.id }}</h3> -->
+<h3 class="post_description"><strong>Post Id:</strong> {{ post.id }}  /  <strong>Posted At:</strong> {{ post.posted_at }}</h3>
+<h3 class="post_description"><strong>Posted by:</strong> {{ post.posted_by }}</h3>
 
 {% endblock contents %}
