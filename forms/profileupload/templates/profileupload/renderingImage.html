@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block titlepage %}
+Render Image
+{% endblock %}
+
+{% block content %}
+
+<ul>
+    {% for renderimg in renderingimg %}
+    <li><img src="{{renderimg.userimage.url}}" alt = "{{renderimg}}">
+        {{renderimg.Name}}
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
