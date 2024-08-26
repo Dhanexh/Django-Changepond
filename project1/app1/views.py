@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views.generic.edit import CreateView
 
 from .models import *
 # Create your views here.
@@ -42,3 +43,14 @@ def form(request):
 
 def post_detail(request, id):
     return render(request, "app1/singlepost.html", {"post": posts[id]})
+
+
+class CreateProfileView(CreateView):
+    model = Posts
+    template_name = "app1/form.html"
+    success_url ='/success'
+    fields ="__all__"
+
+def success(request):
+    return render(request, "app1/success.html")
+

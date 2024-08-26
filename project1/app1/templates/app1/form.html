@@ -6,23 +6,25 @@
 {% block contents %}
 <!-- <link rel="stylesheet" href='{% static "form.css" %}'> -->
 <center>
-    <h1>Form :</h1>
+    <h1>Add Post :</h1>
 </center>
 <div class="form-container">   
-    <form action="/submit-post" method="post">
+    <form action="{% url 'post_create' %}" method="post" enctype="multipart/form-data">
 
-        <label for="author_name">Author Name:</label>
-        <input type="text" id="author_name" name="author_name" required><br>
-
-        <label for="postname">Post Name:</label>
+        {% csrf_token %}
+        {% comment %} <label for="postname">Post Name:</label>
         <input type="text" id="postname" name="postname" required><br>
 
         <label for="description">Description:</label>
         <input type="textarea" id="description" name="description" required><br>
 
-        <label for="image_url">Image URL:</label>
-        <input type="text" id="image_url" name="image_url" required><br>
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" required><br>
 
+        <label for="author_name">Author Name:</label>
+        <input type="text" id="author_name" name="author_name" required><br> {% endcomment %}
+
+        {{form}}<br>
         <button type="submit">Submit</button>
     </form>
 </div>
