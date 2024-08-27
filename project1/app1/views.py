@@ -1,6 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from django.views.generic.edit import CreateView
+
 
 from .models import *
 # Create your views here.
@@ -25,6 +26,7 @@ def home_page(request):
     return render(request,"app1/landing.html",context)
 
 def post(request):
+    posts = Posts.objects.all()
     context = {
         'postdata': posts,
         'show_all': True, 
@@ -44,10 +46,28 @@ def form(request):
 def post_detail(request, id):
     return render(request, "app1/singlepost.html", {"post": posts[id]})
 
+def post_detail(request, id):
+    posts = Posts.objects.all()
+    post = get_object_or_404(posts, id=id)
+    return render(request, "app1/singlepost.html", {"post": post})
+
 
 class CreateProfileView(CreateView):
     model = Posts
     template_name = "app1/form.html"
+    success_url ='/success'
+    fields ="__all__"
+
+
+class CreateAuthorView(CreateView):
+    model = Author
+    template_name = "app1/authorform.html"
+    success_url ='/success'
+    fields ="__all__"
+
+class CreateCommentView(CreateView):
+    model = Comment
+    template_name = "app1/commentform.html"
     success_url ='/success'
     fields ="__all__"
 

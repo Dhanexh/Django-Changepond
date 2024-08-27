@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Add Comment{% endblock %}
+
+{% block contents %}
+<center>
+    <h1>Add Comment :</h1>
+</center>
+<div class="form-container">   
+    <form action="{% url 'comment_create' %}" method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{form}}<br><br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock contents %}
