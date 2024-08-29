@@ -48,7 +48,7 @@ def post_detail(request, id):
 
 def post_detail(request, id):
     posts = Posts.objects.all()
-    post = get_object_or_404(posts, id=id)
+    post = get_object_or_404(posts, slug=id)
     return render(request, "app1/singlepost.html", {"post": post})
 
 
@@ -68,6 +68,12 @@ class CreateAuthorView(CreateView):
 class CreateCommentView(CreateView):
     model = Comment
     template_name = "app1/commentform.html"
+    success_url ='/success'
+    fields ="__all__"
+
+class CreateTagView(CreateView):
+    model = Tag
+    template_name = "app1/tagform.html"
     success_url ='/success'
     fields ="__all__"
 

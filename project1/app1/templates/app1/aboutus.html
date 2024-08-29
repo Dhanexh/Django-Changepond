@@ -1,26 +1,31 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}HomePage{% endblock  %}
+{% block title %}About Us{% endblock  %}
 {% block contents %}
 <center>
     <br>
     <h2>About us :</h2>
-    <br>
+
 </center>
-</br>
-<p>Welcome to Fruit Haven, your go-to destination for all things fruity! At Fruit Haven, we’re passionate about bringing you the freshest, most flavorful fruits from around the globe. Our mission is to provide high-quality, nutritious produce that not only tastes amazing but also supports a healthy lifestyle.
+</br></br>
+<div style="display: flex; align-items: flex-start; margin: 0px 50px;">
+    <img src="{% static 'images/dhanesh.jpg' %}" alt="Dhanesh" width="360" height="400" style="margin-right: 40px; border-radius: 10px">
+    <p style="font-size: 20px">
+        Welcome to Fruit Haven, where your journey into the vibrant world of fruit begins!
+        
+        At Fruit Haven, we are driven by a deep passion for all things fruity.
 
-    Founded on a love for nature's sweet bounty, our team is dedicated to curating a diverse selection of fruits, from everyday favorites like apples and oranges to exotic finds like dragon fruit and rambutan. We work closely with trusted growers and suppliers to ensure that every piece of fruit meets our rigorous standards for quality and freshness.
-    
-    Whether you're looking for the perfect snack, a new ingredient for your favorite recipe, or simply exploring the world of fruits, we’re here to help. Dive into our site to discover seasonal selections, helpful tips, and delicious recipes that celebrate the wonderful world of fruit. Thank you for joining us on this flavorful journey!
-    
-    Welcome to Fruit Haven, your go-to destination for all things fruity! At Fruit Haven, we’re passionate about bringing you the freshest, most flavorful fruits from around the globe. Our mission is to provide high-quality, nutritious produce that not only tastes amazing but also supports a healthy lifestyle.
+        The journey to bringing you the best fruits starts with our meticulous sourcing process. We work closely with a network of trusted growers and suppliers who share our commitment to quality and freshness.<br><br> Our team travels far and wide, from lush orchards in the temperate zones to sun-drenched groves in tropical regions, to find fruits that meet our rigorous standards. Each piece of fruit is selected with care, ensuring that it is ripe, juicy, and ready to enjoy.
 
-Founded on a love for nature's sweet bounty, our team is dedicated to curating a diverse selection of fruits, from everyday favorites like apples and oranges to exotic finds like dragon fruit and rambutan. We work closely with trusted growers and suppliers to ensure that every piece of fruit meets our rigorous standards for quality and freshness.
-
-Whether you're looking for the perfect snack, a new ingredient for your favorite recipe, or simply exploring the world of fruits, we’re here to help. Dive into our site to discover seasonal selections, helpful tips, and delicious recipes that celebrate the wonderful world of fruit. Thank you for joining us on this flavorful journey!
-
-Fruit Haven Team
+        Our commitment to quality goes beyond just the selection of fruits.<br><br>We are delighted to have you join us on this flavorful journey and look forward to sharing the wonderful world of fruit with you. Here’s to celebrating the joy of fruit, one bite at a time!
+        <br><br>
+        Warm regards,<br>
+        <strong>Dhanesh</strong>
     </p>
+</div>
+    
+
+
+
 {% endblock contents %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}HomePage{% endblock  %}
+{% block title %}Post Detail{% endblock  %}
 {% block contents %}
 
 <style>
@@ -42,6 +42,7 @@ h3.post_description {
 }
 
 </style>
+<br><br>
 <img src="{{ post.image.url }}" width=400 height=400 alt="{{ post.title }}" class="post_image">
 <h2 class="post_title">{{ post.title }}</h2>
 <h3 class="post_description"><strong>Description:</strong> {{ post.description }}</h3>

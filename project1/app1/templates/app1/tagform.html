@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Add Tag{% endblock %}
+
+{% block contents %}
+<center>
+    <h1>Add Tag :</h1>
+</center>
+<div class="form-container">   
+    <form action="{% url 'author_create' %}" method="post" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{form}}<br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+{% endblock contents %}
