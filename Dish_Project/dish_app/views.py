@@ -1,17 +1,21 @@
 from django.shortcuts import render
 from .models import Dish
 from .serializers import DishSerializer,DishDetailSerializer,DishImageSerializer
-from rest_framework.viewsets import ModelViewSet
-from rest_framework.exceptions import APIException
-from rest_framework.response import Response
-from rest_framework import status,parsers
-from rest_framework.decorators import action
+from rest_framework.viewsets import ModelViewSet # type: ignore
+from rest_framework.exceptions import APIException # type: ignore
+from rest_framework.response import Response # type: ignore
+from rest_framework import status,parsers # type: ignore
+from rest_framework.decorators import action # type: ignore
+from rest_framework import permissions # type: ignore
+from rest_framework_simplejwt.authentication import JWTAuthentication # type: ignore
 
 
 class DishViewset(ModelViewSet):
     queryset = Dish.objects.all()
     serializer_class = DishSerializer
     parser_classes = (parsers.FormParser,parsers.MultiPartParser,parsers.FileUploadParser)
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [permissions.IsAuthenticated]
 
     def get_serializer_class(self):
         if self.action == 'list':

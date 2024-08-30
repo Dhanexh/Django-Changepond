@@ -6,8 +6,8 @@ def dish_image_path(instance,filename):
     return '/'.join(['uploads',str(instance.name),filename])
 
 class Dish(models.Model):
-    name = models.CharField(max_length=100)
-    price = models.IntegerField()
+    name=models.CharField(max_length=100)
+    price=models.IntegerField()
     image = models.ImageField(upload_to=dish_image_path,null=True,blank=True)
     category = models.ForeignKey(categorymodel, on_delete=models.CASCADE)
 

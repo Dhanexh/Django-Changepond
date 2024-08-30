@@ -8,12 +8,13 @@
     <h1>Add Tag :</h1>
 </center>
 <div class="form-container">   
-    <form action="{% url 'author_create' %}" method="post" enctype="multipart/form-data">
+    <form action="{% url 'tag_create' %}" method="post" enctype="multipart/form-data">
 
         {% csrf_token %}
 
-        {{form}}<br>
+        {{form}}<br><br>
         <button type="submit">Submit</button>
     </form>
 </div>
+<br><br><br><br><br>
 {% endblock contents %}
